@@ -33,6 +33,16 @@ const Testimonials: React.FC = () => {
     }
   ];
 
+   // African country flag SVGs from Flagpedia (public domain)
+  const africanFlags = [
+    { country: "Nigeria", code: "ng" },
+    { country: "South Africa", code: "za" },
+    { country: "Kenya", code: "ke" },
+    { country: "Ghana", code: "gh" },
+    { country: "Egypt", code: "eg" },
+    { country: "Morocco", code: "ma" }
+  ];
+
   return (
     <section id="testimonials" className="py-16 bg-blue-50" ref={ref}>
       <Container>
@@ -76,14 +86,24 @@ const Testimonials: React.FC = () => {
             <span className="text-blue-600 font-bold text-xl">Trusted by 5,000+ users worldwide</span>
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="h-12 w-32 bg-gray-200 rounded-md"></div>
-            <div className="h-12 w-32 bg-gray-200 rounded-md"></div>
-            <div className="h-12 w-32 bg-gray-200 rounded-md"></div>
-            <div className="h-12 w-32 bg-gray-200 rounded-md"></div>
-            <div className="h-12 w-32 bg-gray-200 rounded-md"></div>
-          </div>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {africanFlags.map((flag, index) => (
+              <div 
+                key={flag.code} 
+                className="flex flex-col items-center group"
+                title={flag.country}
+              >
+                <img 
+                  src={`https://flagcdn.com/w80/${flag.code}.png`}
+                  alt={`${flag.country} flag`}
+                  className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
+                  loading="lazy"
+                />
+                <span className="text-xs text-gray-500 mt-1 hidden sm:block">{flag.country}</span>
+              </div>
+            ))}
         </div>
+      </div>
       </Container>
     </section>
   );

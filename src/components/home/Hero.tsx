@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../common/Button';
 import Container from '../common/Container';
-import EmailSignupForm from '../common/EmailSignupForm';
 
 const Hero: React.FC = () => {
   return (
@@ -30,10 +29,25 @@ const Hero: React.FC = () => {
             <div className="mt-8 p-4 bg-white/50 backdrop-blur-sm rounded-lg border border-gray-100 shadow-sm inline-block">
               <p className="text-sm text-gray-500 mb-2">Trusted by 5,000+ property managers</p>
               <div className="flex items-center justify-center lg:justify-start space-x-4">
-                {/* Placeholder for trust badges */}
-                <div className="h-8 w-16 bg-gray-200 rounded-md"></div>
-                <div className="h-8 w-16 bg-gray-200 rounded-md"></div>
-                <div className="h-8 w-16 bg-gray-200 rounded-md"></div>
+                {/* Free badge resources from Simple Icons */}
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/stripe.svg" 
+                  alt="Stripe" 
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  title="Stripe Payments"
+                />
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/paypal.svg" 
+                  alt="PayPal" 
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  title="PayPal Payments"
+                />
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/google.svg" 
+                  alt="Google" 
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  title="Google Workspace"
+                />
               </div>
             </div>
           </div>
